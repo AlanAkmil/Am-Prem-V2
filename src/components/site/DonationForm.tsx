@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useRef, useState, type ChangeEvent, type FormEvent } from "react";
 import { toast } from "sonner";
 
@@ -140,10 +141,13 @@ export function DonationForm() {
               required
             />
             {preview && (
-              <img
+              <Image
                 src={preview}
                 alt="Preview bukti transfer"
-                className="mt-3 max-h-64 rounded-md border border-border object-contain"
+                width={400}
+                height={256}
+                unoptimized
+                className="mt-3 max-h-64 w-auto rounded-md border border-border object-contain"
               />
             )}
           </div>
