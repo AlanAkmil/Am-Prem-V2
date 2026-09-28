@@ -1,7 +1,7 @@
 import Image from "next/image";
 import type { Metadata } from "next";
 
-import { absoluteUrl, siteConfig, socialLinks } from "@/config/site";
+import { siteConfig, socialLinks } from "@/config/site";
 import { pageMetadata } from "@/lib/seo";
 
 const description = `Halaman kontribusi — ucapan terima kasih kepada ${siteConfig.author}, pembuat dan pengelola layanan Alight Motion Premium Creator.`;
