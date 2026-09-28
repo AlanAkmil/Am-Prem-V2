@@ -123,7 +123,6 @@ export function ActivationFlow() {
       if (persisted.linkSentAt) setNowTick(Date.now());
     }
     setHydrated(true);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
