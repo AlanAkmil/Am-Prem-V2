@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Plus_Jakarta_Sans, Sora } from "next/font/google";
 import type { ReactNode } from "react";
 
 import { BottomNav } from "@/components/site/BottomNav";
@@ -11,6 +12,20 @@ import { absoluteUrl, siteConfig } from "@/config/site";
 import { defaultMetadata } from "@/lib/seo";
 
 import "./globals.css";
+
+const plusJakartaSans = Plus_Jakarta_Sans({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-plus-jakarta-sans",
+  display: "swap",
+});
+
+const sora = Sora({
+  subsets: ["latin"],
+  weight: ["500", "600", "700"],
+  variable: "--font-sora",
+  display: "swap",
+});
 
 export const metadata: Metadata = defaultMetadata;
 
@@ -50,14 +65,8 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   };
 
   return (
-    <html lang="id">
+    <html lang="id" className={`${plusJakartaSans.variable} ${sora.variable}`}>
       <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link
-          rel="stylesheet"
-          href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Sora:wght@500;600;700&display=swap"
-        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteLd) }}
