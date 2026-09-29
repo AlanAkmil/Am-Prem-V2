@@ -17,7 +17,7 @@ export default function StatusPage() {
       <div className="mt-8 grid gap-6 lg:grid-cols-[20rem_1fr]">
         <ApiStatusCard />
 
-        <div className="rounded-2xl border border-border bg-card p-6 shadow-soft">
+        <div className="hover-lift animate-fade-up rounded-2xl border border-border bg-card p-6 shadow-soft">
           <h2 className="text-lg font-semibold">Paket yang tersedia</h2>
           {info.data?.ok ? (
             <>
