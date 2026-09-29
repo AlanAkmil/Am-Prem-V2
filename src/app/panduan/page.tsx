@@ -119,7 +119,7 @@ export default function PanduanPage() {
           {steps.map((step, index) => (
             <li
               key={step.title}
-              className="rounded-2xl border border-border bg-card p-6 shadow-soft sm:p-8"
+              className="hover-lift animate-fade-up rounded-2xl border border-border bg-card p-6 shadow-soft sm:p-8"
             >
               <div className="flex flex-col gap-6 sm:flex-row">
                 <span
