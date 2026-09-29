@@ -72,7 +72,10 @@ export function Navbar() {
             aria-expanded={open}
             onClick={() => setOpen((value) => !value)}
           >
-            <i className={open ? "fa-solid fa-xmark" : "fa-solid fa-bars"} aria-hidden="true" />
+            <i
+              className={`transition-transform duration-300 ${open ? "fa-solid fa-xmark rotate-90" : "fa-solid fa-bars rotate-0"}`}
+              aria-hidden="true"
+            />
           </Button>
         </div>
       </nav>
@@ -84,7 +87,7 @@ export function Navbar() {
             onClick={() => setOpen(false)}
             aria-hidden="true"
           />
-          <div className="animate-fade-in relative z-40 border-t border-border bg-background lg:hidden">
+          <div className="animate-slide-down relative z-40 border-t border-border bg-background lg:hidden">
             <ul className="container-page flex flex-col py-3">
               {navItems.map((item) => {
                 const active =
