@@ -21,7 +21,8 @@ export function AfterSuccess() {
         {steps.map((step, index) => (
           <li
             key={step}
-            className="flex gap-3 rounded-xl border border-border bg-card p-4 text-sm leading-relaxed shadow-soft"
+            style={{ animationDelay: `${index * 70}ms` }}
+            className="animate-fade-up hover-lift flex gap-3 rounded-xl border border-border bg-card p-4 text-sm leading-relaxed shadow-soft"
           >
             <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-brand-gradient text-xs font-semibold text-white">
               {index + 1}
