@@ -71,9 +71,12 @@ export default function KontribusiPage() {
                 href={link.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`group flex flex-col items-center gap-2 rounded-xl border border-border bg-card px-3 py-4 text-xs text-muted-foreground shadow-soft transition-colors hover:text-foreground ${link.tone}`}
+                className={`hover-lift press-scale group flex flex-col items-center gap-2 rounded-xl border border-border bg-card px-3 py-4 text-xs text-muted-foreground shadow-soft transition-all duration-200 hover:text-foreground ${link.tone}`}
               >
-                <i className={`${link.icon} text-xl`} aria-hidden="true" />
+                <i
+                  className={`${link.icon} text-xl transition-transform duration-200 group-hover:scale-110`}
+                  aria-hidden="true"
+                />
                 {link.label}
               </a>
             ))}
