@@ -140,7 +140,7 @@ export function HidakaAi() {
         {isOpen && (
           <div
             onClick={(e) => e.stopPropagation()}
-            className="flex h-[70vh] max-h-[560px] w-[92vw] max-w-sm flex-col overflow-hidden rounded-2xl border border-border bg-background shadow-2xl"
+            className="animate-scale-in flex h-[70vh] max-h-[560px] w-[92vw] max-w-sm flex-col overflow-hidden rounded-2xl border border-border bg-background shadow-2xl"
           >
             <div className="flex items-center justify-between border-b border-border bg-brand-gradient px-4 py-3 text-white">
               <div className="flex items-center gap-2">
@@ -169,7 +169,7 @@ export function HidakaAi() {
               {messages.map((msg, idx) => (
                 <div
                   key={idx}
-                  className={`flex ${msg.role === "user" ? "justify-end" : "justify-start"}`}
+                  className={`animate-fade-up flex ${msg.role === "user" ? "justify-end" : "justify-start"}`}
                 >
                   <div
                     className={`max-w-[85%] rounded-xl px-3 py-2 text-sm leading-relaxed ${
@@ -183,12 +183,16 @@ export function HidakaAi() {
                 </div>
               ))}
               {isLoading && (
-                <div className="flex justify-start">
-                  <div className="max-w-[85%] rounded-xl bg-surface px-3 py-2 text-sm leading-relaxed text-foreground">
+                <div className="animate-fade-up flex justify-start">
+                  <div className="max-w-[85%] rounded-xl bg-surface px-3 py-2.5 text-sm leading-relaxed text-foreground">
                     {streamingText ? (
                       renderContent(streamingText)
                     ) : (
-                      <span className="text-muted-foreground">Mengetik...</span>
+                      <span className="flex items-center gap-1" aria-label="Mengetik...">
+                        <span className="size-1.5 animate-bounce rounded-full bg-muted-foreground [animation-delay:-0.3s]" />
+                        <span className="size-1.5 animate-bounce rounded-full bg-muted-foreground [animation-delay:-0.15s]" />
+                        <span className="size-1.5 animate-bounce rounded-full bg-muted-foreground" />
+                      </span>
                     )}
                   </div>
                 </div>
@@ -232,7 +236,7 @@ export function HidakaAi() {
         <button
           onClick={() => setIsOpen((v) => !v)}
           aria-label={isOpen ? "Tutup Hidaka Ai" : "Buka Hidaka Ai"}
-          className="flex size-14 items-center justify-center rounded-full bg-brand-gradient text-white shadow-glow transition-transform hover:scale-105 active:scale-95"
+          className={`flex size-14 items-center justify-center rounded-full bg-brand-gradient text-white shadow-glow transition-all duration-300 press-scale hover:scale-105 hover:shadow-xl ${isOpen ? "" : "pulse-dot"}`}
         >
           <i
             className={`fa-solid ${isOpen ? "fa-xmark" : "fa-comment-dots"} text-xl`}
