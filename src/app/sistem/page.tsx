@@ -24,7 +24,7 @@ export default function SistemPage() {
         </p>
 
         <div className="mt-8 grid gap-6 lg:grid-cols-2">
-          <div className="rounded-2xl border border-border bg-card p-6 shadow-soft">
+          <div className="hover-lift animate-fade-up rounded-2xl border border-border bg-card p-6 shadow-soft">
             <h2 className="text-lg font-semibold">Alur sistem</h2>
             <pre className="mt-4 rounded-xl border border-border bg-surface p-5 font-sans text-sm leading-loose text-muted-foreground">
               {`User
@@ -37,7 +37,7 @@ External Services`}
             </pre>
           </div>
 
-          <div className="rounded-2xl border border-border bg-card p-6 shadow-soft">
+          <div className="hover-lift animate-fade-up rounded-2xl border border-border bg-card p-6 shadow-soft">
             <h2 className="text-lg font-semibold">Yang perlu kamu tahu</h2>
             <ul className="mt-4 space-y-3 text-sm leading-relaxed text-muted-foreground">
               <li className="flex gap-2.5">
