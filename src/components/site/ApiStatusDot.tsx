@@ -7,11 +7,18 @@ export function ApiStatusDot() {
   const online = data?.online === true;
 
   const label = isPending ? "Memeriksa" : online ? "API Online" : "API Offline";
-  const dotClass = isPending ? "bg-muted-foreground" : online ? "bg-success" : "bg-destructive";
+  const dotClass = isPending
+    ? "bg-muted-foreground"
+    : online
+      ? "bg-success pulse-dot"
+      : "bg-destructive";
 
   return (
-    <span className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-3 py-1.5 text-xs font-medium text-muted-foreground shadow-soft">
-      <span className={`h-2 w-2 rounded-full ${dotClass}`} aria-hidden="true" />
+    <span className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-3 py-1.5 text-xs font-medium text-muted-foreground shadow-soft transition-colors">
+      <span
+        className={`h-2 w-2 rounded-full transition-colors duration-300 ${dotClass}`}
+        aria-hidden="true"
+      />
       {label}
     </span>
   );
