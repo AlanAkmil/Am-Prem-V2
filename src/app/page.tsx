@@ -50,24 +50,34 @@ export default function Home() {
 
       <section className="container-page pt-12 pb-6 sm:pt-16">
         <div className="grid items-center gap-10 lg:grid-cols-2">
-          <div className="animate-fade-up">
+          <div>
             <div className="flex flex-wrap gap-2">
               {badges.map((badge, i) => (
                 <span
                   key={badge}
-                  className={`rounded-full border border-border bg-card px-3 py-1 text-xs font-semibold tracking-wide ${badgeTones[i % badgeTones.length]}`}
+                  style={{ animationDelay: `${i * 60}ms` }}
+                  className={`animate-fade-up rounded-full border border-border bg-card px-3 py-1 text-xs font-semibold tracking-wide ${badgeTones[i % badgeTones.length]}`}
                 >
                   {badge}
                 </span>
               ))}
             </div>
-            <h1 className="mt-5 text-3xl leading-tight font-semibold sm:text-5xl">
+            <h1
+              style={{ animationDelay: "80ms" }}
+              className="animate-fade-up mt-5 text-3xl leading-tight font-semibold sm:text-5xl"
+            >
               Alight Motion <span className="text-brand-gradient">Premium Creator</span>
             </h1>
-            <p className="mt-4 max-w-xl text-base leading-relaxed text-muted-foreground">
+            <p
+              style={{ animationDelay: "160ms" }}
+              className="animate-fade-up mt-4 max-w-xl text-base leading-relaxed text-muted-foreground"
+            >
               Gunakan layanan gratis dengan panduan langkah demi langkah yang mudah dipahami.
             </p>
-            <div className="mt-7 flex flex-wrap gap-3">
+            <div
+              style={{ animationDelay: "240ms" }}
+              className="animate-fade-up mt-7 flex flex-wrap gap-3"
+            >
               <Button asChild size="lg">
                 <Link href="/aktivasi">
                   <i className="fa-solid fa-bolt" aria-hidden="true" />
@@ -81,12 +91,12 @@ export default function Home() {
                 </Link>
               </Button>
             </div>
-            <div className="mt-6">
+            <div style={{ animationDelay: "300ms" }} className="animate-fade-up mt-6">
               <ApiStatusDot />
             </div>
           </div>
 
-          <div className="animate-fade-in relative overflow-hidden rounded-2xl border border-border bg-card shadow-lift">
+          <div className="animate-scale-in relative overflow-hidden rounded-2xl border border-border bg-card shadow-lift">
             <div className="absolute inset-0 bg-brand-gradient opacity-10" aria-hidden="true" />
             <Image
               src={siteConfig.thumbnail}
@@ -109,10 +119,11 @@ export default function Home() {
           menggunakan website ini.
         </p>
         <ul className="mt-6 grid gap-3 sm:grid-cols-2">
-          {checklist.map((item) => (
+          {checklist.map((item, index) => (
             <li
               key={item.text}
-              className="flex items-start gap-3 rounded-xl border border-border bg-card p-4 shadow-soft"
+              style={{ animationDelay: `${index * 80}ms` }}
+              className="animate-fade-up hover-lift flex items-start gap-3 rounded-xl border border-border bg-card p-4 shadow-soft"
             >
               <i className={`${item.icon} mt-0.5 text-brand-violet`} aria-hidden="true" />
               <span className="text-sm text-muted-foreground">{item.text}</span>
@@ -126,8 +137,12 @@ export default function Home() {
           Penjelasan Singkat
         </h2>
         <div className="mt-6 grid gap-4 sm:grid-cols-2">
-          {quickAnswers.map((item) => (
-            <div key={item.q} className="rounded-xl border border-border bg-card p-5 shadow-soft">
+          {quickAnswers.map((item, index) => (
+            <div
+              key={item.q}
+              style={{ animationDelay: `${index * 80}ms` }}
+              className="animate-fade-up hover-lift rounded-xl border border-border bg-card p-5 shadow-soft"
+            >
               <p className="font-medium">{item.q}</p>
               <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{item.a}</p>
             </div>
