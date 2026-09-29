@@ -8,7 +8,7 @@ export function ApiStatusCard() {
   const online = data?.online === true;
 
   return (
-    <div className="rounded-2xl border border-border bg-card p-6 shadow-soft">
+    <div className="hover-lift animate-fade-up rounded-2xl border border-border bg-card p-6 shadow-soft">
       <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
         API Status
       </p>
