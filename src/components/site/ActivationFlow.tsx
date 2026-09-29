@@ -196,7 +196,7 @@ export function ActivationFlow() {
             <button
               type="button"
               onClick={() => setStep(value)}
-              className={`flex h-9 w-9 items-center justify-center rounded-full border text-sm font-semibold transition-colors ${
+              className={`flex h-9 w-9 items-center justify-center rounded-full border text-sm font-semibold transition-all duration-300 press-scale ${
                 step === value
                   ? "border-primary bg-brand-gradient text-white shadow-glow"
                   : "border-border bg-card text-muted-foreground hover:border-primary/40"
@@ -210,7 +210,10 @@ export function ActivationFlow() {
         ))}
       </ol>
 
-      <div className="rounded-2xl border border-border bg-card p-6 shadow-soft sm:p-8">
+      <div
+        key={step}
+        className="animate-fade-up rounded-2xl border border-border bg-card p-6 shadow-soft transition-shadow sm:p-8"
+      >
         <p className="text-xs font-semibold uppercase tracking-wider text-primary">Step {step}</p>
         <h2 className="mt-1 text-xl font-semibold">{stepTitles[step]}</h2>
 
